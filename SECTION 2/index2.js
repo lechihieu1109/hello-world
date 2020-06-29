@@ -1075,11 +1075,69 @@ let x = [
     }
     
 ];
+console.log('6.1');
 console.log('Hi there, this is your learning tasks to front-end developer career :');
-for ( let i = 0; i < x.length; i++){
-         let n = i+1;
-    console.log( n + "." + x[i].task);
+for (let i = 0; i < x.length; i++) {
+    let n = i + 1;
+    console.log(n + "." + x[i].task);
     console.log('complete :' + "" + x[i].complete);
+
+};
+
+console.log('6.2');
+
+    let usercommand = prompt('Enter you comand (New, update, delete, complete)').toLowerCase();
+    if (usercommand == 'new') {
+        let newtask = prompt('enter new task');
+        x.push({task: newtask, complete: false });
+        for (let i = 0; i < x.length; i++) {
+            let n = i + 1;
+            console.log(n + "." + x[i].task);
+            console.log('complete :' + "" + x[i].complete);
+        
+        };
+        
+    };
+
+console.log('6.3');
+let usernhap =prompt('Enter you comand (New, update, delete, complete)').toLowerCase();
+if(usernhap == 'update'){
+    let position = prompt('enter you position');
+    let title =prompt('enter you title');
+    x[Number(position) - 1].task = title
+    for (let i = 0; i < x.length; i++) {
+        let n = i + 1;
+        console.log(n + "." + x[i].task);
+        console.log('complete :' + "" + x[i].complete);
+    
+    };
+};
+
+console.log('6.4');
+let usernhap =prompt('Enter you comand (New, update, delete, complete)').toLowerCase();
+if(usernhap == 'complete'){
+    let position = prompt('Enter position');
+    x[Number(position) - 1].complete = true
+    for (let i = 0; i < x.length; i++) {
+        let n = i + 1;
+        console.log(n + "." + x[i].task);
+        console.log('complete :' + "" + x[i].complete);
+    
+    };
+};
+
+console.log('6.5');
+let usernhap =prompt('Enter you comand (New, update, delete, complete)').toLowerCase();
+if(usernhap == 'delete'){
+    let deleteindex = prompt('want to delete');
+    x.splice(deleteindex - 1, 1);
+        for (let i = 0; i < x.length; i++) {
+        let n = i + 1;
+        console.log(n + "." + x[i].task);
+        console.log('complete :' + "" + x[i].complete);
+    
+    };
+}
 
 console.log('7');
 let pos = {

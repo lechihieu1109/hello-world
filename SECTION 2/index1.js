@@ -115,21 +115,102 @@
 //     alert(i);
 // }
 
-const circle = {
-    shape: 'circle',
-    x: 100,
-    y: 50,
-    radius: 30,
-    };
+// const circle = {
+//     shape: 'circle',
+//     x: 100,
+//     y: 50,
+//     radius: 30,
+//     };
 
-penup();
-rt(90);
-fd(circle.x);
-lt(90);
-fd(circle.y);
-pendown();
- fd(circle.radius);
-for (let i = 0; i < 360; i++) {
-    rt(2);
-    fd(2);
+// penup();
+// rt(90);
+// fd(circle.x);
+// lt(90);
+// fd(circle.y);
+// pendown();
+//  fd(circle.radius);
+// for (let i = 0; i < 360; i++) {
+//     rt(2);
+//     fd(2);
+// }
+let x = [
+    {
+        task: 'HTML',
+        complete: false
+    },
+    {
+        task: 'CSS',
+        complete: false
+    },
+    {
+        task: 'Basics of JavaScript',
+        complete: false
+    },
+    {
+        task: 'Node Package Manager',
+        complete: false
+    },
+    {
+        task: 'Git',
+        complete: false
+    }
+    
+];
+console.log('Hi there, this is your learning tasks to front-end developer career :');
+for (let i = 0; i < x.length; i++) {
+    let n = i + 1;
+    console.log(n + "." + x[i].task);
+    console.log('complete :' + "" + x[i].complete);
+
+};
+
+
+    let usercommand = prompt('Enter you comand (New, update, delete, complete)').toLowerCase();
+    if (usercommand == 'new') {
+        let newtask = prompt('enter new task');
+        x.push({task: newtask, complete: false });
+        for (let i = 0; i < x.length; i++) {
+            let n = i + 1;
+            console.log(n + "." + x[i].task);
+            console.log('complete :' + "" + x[i].complete);
+        
+        };
+        
+    };
+    
+let usernhap =prompt('Enter you comand (New, update, delete, complete)').toLowerCase();
+if(usernhap == 'update'){
+    let position = prompt('enter you position');
+    let title =prompt('enter you title');
+    x[Number(position) - 1].task = title
+    for (let i = 0; i < x.length; i++) {
+        let n = i + 1;
+        console.log(n + "." + x[i].task);
+        console.log('complete :' + "" + x[i].complete);
+    
+    };
+}
+
+let usernhap =prompt('Enter you comand (New, update, delete, complete)').toLowerCase();
+if(usernhap == 'complete'){
+    let position = prompt('Enter position');
+    x[Number(position) - 1].complete = true
+    for (let i = 0; i < x.length; i++) {
+        let n = i + 1;
+        console.log(n + "." + x[i].task);
+        console.log('complete :' + "" + x[i].complete);
+    
+    };
+}
+
+let usernhap =prompt('Enter you comand (New, update, delete, complete)').toLowerCase();
+if(usernhap == 'delete'){
+    let deleteindex = prompt('want to delete');
+    x.splice(deleteindex - 1, 1);
+        for (let i = 0; i < x.length; i++) {
+        let n = i + 1;
+        console.log(n + "." + x[i].task);
+        console.log('complete :' + "" + x[i].complete);
+    
+    };
 }
